@@ -38,6 +38,16 @@
                 <td id="last-7-days">{{BTC.last7days}}</td>
             </tr>
             <tr id="second-row">
+                <th id="id" scope="row">1</th>
+                <td id="name">{{ETH.name}}</td>
+                <td id="price">{{ETH.price}}</td>
+                <td id="24h-percent" v-bind:style="style">{{ETH.percent_24h}}</td>
+                <td id="7d-percent" v-bind:style="style">{{ETH.percent_7d}}</td>
+                <td id="market-cap">{{ETH.marketCap}}</td>
+                <td id="volume-24h">{{ETH.volume24h}}</td>
+                <td id="circulating-supply">{{ETH.circulSupply}}</td>
+                <td id="last-7-days">{{ETH.last7days}}</td>
+            </tr>
             </tbody>
         </table>
     </div>
