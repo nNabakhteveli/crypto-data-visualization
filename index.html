@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Crypto Data Visualization</title>
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+      <div id="container">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">24h %</th>
+                <th scope="col">7d%</th>
+                <th scope="col">Market Cap</th>
+                <th scope="col">Volume(24h)</th>
+                <th scope="col">Max Circulating Supply</th>
+                <th scope="col">Last 7 Days</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr id="first-row">
+                <th id="id" scope="row">1</th>
+                <td id="name">{{BTC.name}}</td>
+                <td id="price">{{BTC.price}}</td>
+                <td id="24h-percent" v-bind:style="style">{{BTC.percent_24h}}</td>
+                <td id="7d-percent" v-bind:style="style">{{BTC.percent_7d}}</td>
+                <td id="market-cap">{{BTC.marketCap}}</td>
+                <td id="volume-24h">{{BTC.volume24h}}</td>
+                <td id="circulating-supply">{{BTC.circulSupply}}</td>
+                <td id="last-7-days">{{BTC.last7days}}</td>
+            </tr>
+            <tr id="second-row">
+            </tbody>
+        </table>
+    </div>
+<!-- <tr v-for='item in items' id="fifth-row">  <th id="id" scope="row">item.name</th></tr>    ETC -->
+    <script src='./script.js'></script>
+  </body>
+</html>
