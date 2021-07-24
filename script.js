@@ -1,62 +1,97 @@
-
 const app = Vue.createApp({
     data() {
         return {
-            BTC: {
-                symbol: 'BTC',
-                name: '',
-                price: '',
-                percent_24h: null,
-                percent_7d: null,
-                marketCap: null,
-                volume24h: null,
-                circulSupply: null,
-            },
-
-            ETH: {
-                symbol: 'ETH',
-                name: '',
-                price: '',
-                percent_24h: null,
-                percent_7d: null,
-                marketCap: null,
-                volume24h: null,
-                circulSupply: null,
-            },
+            BTC: {},
+            ETH: {},
+            ADA: {},
+            USDT: {},
+            BNB: {},
+            LINK: {},
+            DOT: {},
+            DOGE: {},
+            LTC: {},
 
             coins: []
         }
     },
 
     methods: {
-        async callTheAPI(coinSymbol) {
-            const APIKEY = 'amq5jptnsna65hkogat66b';
-            let URL = `https://api.lunarcrush.com/v2?data=assets&key=${APIKEY}&symbol=${coinSymbol.symbol}&data_points=365&interval=day`;
-            const fetching = await fetch(URL);
-            const result = await fetching.json();
+        async setBTC() {
+            const fetching = await fetch('./data/Bitcoin.json');
+            const res = await fetching.json();
+            this.BTC = res;
+            this.coins.push(this.BTC);
+        },
 
-            const data = result.data[0];
-            coinSymbol.name = data.name;
-            coinSymbol.price = `$${(data.price).toLocaleString()}`;
-            coinSymbol.percent_24h = `${data.percent_change_24h}%`;
-            coinSymbol.percent_7d = `${data.percent_change_7d}%`;
-            coinSymbol.marketCap = `$${data.market_cap.toLocaleString()}`;
-            coinSymbol.volume24h = `$${data.volume_24h.toLocaleString()}`;
-            coinSymbol.circulSupply = `${(data.max_supply).toLocaleString()} ${coinSymbol.symbol}`;
+        async setETH() {
+            const fetching = await fetch('./data/Ethereum.json');
+            const res = await fetching.json();
+            this.ETH = res;
+            this.coins.push(this.ETH);
+        },
+
+        async setADA() {
+            const fetching = await fetch('./data/Cardano.json');
+            const res = await fetching.json();
+            this.ADA = res;
+            this.coins.push(this.ADA);
+        },
+
+        async setUSDT() {
+            const fetching = await fetch('./data/TetherUSD.json');
+            const res = await fetching.json();
+            this.USDT = res;
+            this.coins.push(this.USDT);
+        },
+
+        async setBNB() {
+            const fetching = await fetch('./data/BNB.json');
+            const res = await fetching.json();
+            this.BNB = res;
+            this.coins.push(this.BNB);
+        },
+
+        async setLINK() {
+            const fetching = await fetch('./data/Chainlink.json');
+            const res = await fetching.json();
+            this.LINK = res;
+            this.coins.push(this.LINK);
+        },
+
+        async setDOT() {
+            const fetching = await fetch('./data/Polkadot.json');
+            const res = await fetching.json();
+            this.DOT = res;
+            this.coins.push(this.DOT);
+        },
+
+        async setDOGE() {
+            const fetching = await fetch('./data/Doge.json');
+            const res = await fetching.json();
+            this.DOGE = res;
+            this.coins.push(this.DOGE);
+        },
+
+        async setLTC() {
+            const fetching = await fetch('./data/Litecoin.json');
+            const res = await fetching.json();
+            this.LTC = res;
+            this.coins.push(this.LTC);
         }
     },
     
     mounted() {
-        this.$nextTick(function () {
-            this.callTheAPI(this.BTC);
-            this.callTheAPI(this.ETH);
-
-            this.coins.push(this.BTC);
-            this.coins.push(this.ETH);
-            console.log(this.coins);
+        this.$nextTick(function() {
+            this.setBTC();
+            this.setETH();
+            this.setADA();
+            this.setUSDT();
+            this.setBNB();
+            this.setLINK();
+            this.setDOT();
+            this.setDOGE();
+            this.setLTC();
         })
     }
 
 }).mount("#container");
-
-
