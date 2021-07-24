@@ -4,7 +4,7 @@ const app = Vue.createApp({
             BTC: {},
             ETH: {},
             ADA: {},
-            USDT: {},
+            XRP: {},
             BNB: {},
             LINK: {},
             DOT: {},
@@ -37,11 +37,11 @@ const app = Vue.createApp({
             this.coins.push(this.ADA);
         },
 
-        async setUSDT() {
-            const fetching = await fetch('./data/TetherUSD.json');
+        async setXRP() {
+            const fetching = await fetch('./data/Ripple.json');
             const res = await fetching.json();
-            this.USDT = res;
-            this.coins.push(this.USDT);
+            this.XRP = res;
+            this.coins.push(this.XRP);
         },
 
         async setBNB() {
@@ -85,7 +85,7 @@ const app = Vue.createApp({
             this.setBTC();
             this.setETH();
             this.setADA();
-            this.setUSDT();
+            this.setXRP();
             this.setBNB();
             this.setLINK();
             this.setDOT();

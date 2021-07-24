@@ -42,8 +42,8 @@ let coinsArr = [
     },
 
     {
-        symbol: 'USDT',
-        path: './data/TetherUSD.json'
+        symbol: 'XRP',
+        path: './data/Ripple.json'
     },
 
     {
