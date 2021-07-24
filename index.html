@@ -22,36 +22,22 @@
                 <th scope="col">Market Cap</th>
                 <th scope="col">Volume(24h)</th>
                 <th scope="col">Max Circulating Supply</th>
-                <th scope="col">Last 7 Days</th>
             </tr>
             </thead>
             <tbody>
-            <tr id="first-row">
+              <tr v-for='coin in coins'>
                 <th id="id" scope="row">1</th>
-                <td id="name">{{BTC.name}}</td>
-                <td id="price">{{BTC.price}}</td>
-                <td id="24h-percent" v-bind:style="style">{{BTC.percent_24h}}</td>
-                <td id="7d-percent" v-bind:style="style">{{BTC.percent_7d}}</td>
-                <td id="market-cap">{{BTC.marketCap}}</td>
-                <td id="volume-24h">{{BTC.volume24h}}</td>
-                <td id="circulating-supply">{{BTC.circulSupply}}</td>
-                <td id="last-7-days">{{BTC.last7days}}</td>
-            </tr>
-            <tr id="second-row">
-                <th id="id" scope="row">1</th>
-                <td id="name">{{ETH.name}}</td>
-                <td id="price">{{ETH.price}}</td>
-                <td id="24h-percent" v-bind:style="style">{{ETH.percent_24h}}</td>
-                <td id="7d-percent" v-bind:style="style">{{ETH.percent_7d}}</td>
-                <td id="market-cap">{{ETH.marketCap}}</td>
-                <td id="volume-24h">{{ETH.volume24h}}</td>
-                <td id="circulating-supply">{{ETH.circulSupply}}</td>
-                <td id="last-7-days">{{ETH.last7days}}</td>
-            </tr>
+                <td id="name">{{coin.name}}</td>
+                <td id="price">{{coin.price}}</td>
+                <td id="24h-percent" v-bind:class="coin.symbol.percent_24h ? 'positive' : 'negative'">{{coin.percent_24h}}</td>
+                <td id="7d-percent" v-bind:class="coin.symbol.percent_7d ? 'positive' : 'negative'">{{coin.percent_7d}}</td>
+                <td id="market-cap">{{coin.marketCap}}</td>
+                <td id="volume-24h">{{coin.volume24h}}</td>
+                <td id="circulating-supply">{{coin.circulSupply}}</td>
+              </tr>
             </tbody>
         </table>
     </div>
-<!-- <tr v-for='item in items' id="fifth-row">  <th id="id" scope="row">item.name</th></tr>    ETC -->
     <script src='./script.js'></script>
   </body>
 </html>
