@@ -79,6 +79,8 @@ const app = Vue.createApp({
             this.coins.push(this.LTC);
         }
     },
+
+    
     
     mounted() {
         this.$nextTick(function() {

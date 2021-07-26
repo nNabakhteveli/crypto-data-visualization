@@ -18,7 +18,7 @@
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
                 <th scope="col">24h %</th>
-                <th scope="col">7d%</th>
+                <th scope="col">7d %</th>
                 <th scope="col">Market Cap</th>
                 <th scope="col">Volume(24h)</th>
                 <th scope="col">Max Circulating Supply</th>
@@ -29,8 +29,8 @@
                 <th id="id" scope="row">{{index + 1}}</th>
                 <td id="name">{{coin.name}}</td>
                 <td id="price">{{coin.price}}</td>
-                <td id="24h-percent" v-bind:class="coin.percent_24h ? 'positive' : 'negative'">{{coin.percent_24h}}</td>
-                <td id="7d-percent" v-bind:class="coin.percent_7d ? 'positive' : 'negative'">{{coin.percent_7d}}</td>
+                <td id="24h-percent" v-bind:class="coin.percent_24h > 0 ? 'positive' : 'negative'">{{coin.percent_24h}}%</td>
+                <td id="7d-percent" v-bind:class="coin.percent_7d > 0 ? 'positive' : 'negative'">{{coin.percent_7d}}%</td>
                 <td id="market-cap">{{coin.marketCap}}</td>
                 <td id="volume-24h">{{coin.volume24h}}</td>
                 <td id="circulating-supply">{{coin.circulSupply}}</td>

@@ -13,8 +13,8 @@ async function callTheAPI(coinSymbol, path) {
     let dataToPass = JSON.stringify({
         name: data.name,
         price: `$${(data.price).toLocaleString()}`,
-        percent_24h: `${data.percent_change_24h}%`,
-        percent_7d: `${data.percent_change_7d}%`,
+        percent_24h: `${data.percent_change_24h}`,
+        percent_7d: `${data.percent_change_7d}`,
         marketCap: `$${data.market_cap.toLocaleString()}`,
         volume24h: `$${data.volume_24h.toLocaleString()}`,
         circulSupply: `${data.max_supply} ${coinSymbol}`
