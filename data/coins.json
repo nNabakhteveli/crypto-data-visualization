@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "symbol": "BTC",
+            "path": "./data/Bitcoin.json"
+        },
+
+        {
+            "symbol": "ETH",
+            "path": "./data/Ethereum.json"
+        },
+
+        {
+            "symbol": "ADA",
+            "path": "./data/Cardano.json"
+        },
+
+        {
+            "symbol": "XRP",
+            "path": "./data/Ripple.json"
+        },
+
+        {
+            "symbol": "BNB",
+            "path": "./data/BNB.json"
+        },
+
+        {
+            "symbol": "LINK",
+            "path": "./data/Chainlink.json"
+        },
+
+        {
+            "symbol": "DOT",
+            "path": "./data/Polkadot.json"
+        },
+
+        {
+            "symbol": "DOGE",
+            "path": "./data/Doge.json"
+        },
+
+        {
+            "symbol": "LTC",
+            "path": "./data/Litecoin.json"
+        }
+    ]
+}

@@ -1,7 +1,6 @@
 import fetch from 'node-fetch';
 import fs from 'fs';
 
-
 async function callTheAPI(coinSymbol, path) {
     const APIKEY = 'amq5jptnsna65hkogat66b';
     let URL = `https://api.lunarcrush.com/v2?data=assets&key=${APIKEY}&symbol=${coinSymbol}&data_points=365&interval=day`;
@@ -24,53 +23,11 @@ async function callTheAPI(coinSymbol, path) {
     console.log(`${coinSymbol}'s Data has been written`);
 }
 
-
-let coinsArr = [
-    {
-        symbol: 'BTC',
-        path: './data/Bitcoin.json'
-    },
-
-    {
-        symbol: 'ETH',
-        path: './data/Ethereum.json'
-    },
-
-    {
-        symbol: 'ADA',
-        path: './data/Cardano.json'
-    },
-
-    {
-        symbol: 'XRP',
-        path: './data/Ripple.json'
-    },
-
-    {
-        symbol: 'BNB',
-        path: './data/BNB.json'
-    },
-
-    {
-        symbol: 'LINK',
-        path: './data/Chainlink.json'
-    },
-
-    {
-        symbol: 'DOT',
-        path: './data/Polkadot.json'
-    },
-
-    {
-        symbol: 'DOGE',
-        path: './data/Doge.json'
-    },
-
-    {
-        symbol: 'LTC',
-        path: './data/Litecoin.json'
-    }
-];
-
-coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
-
+// To always update the data
+fs.readFile('./data/coins.json', (err, data) => {
+  if (err) throw err;
+  const coinsArr = JSON.parse(data).data;
+  setInterval(() => {
+    coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
+}, 5000); 
+});
