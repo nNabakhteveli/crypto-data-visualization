@@ -1,6 +1,26 @@
 {
-    "type": "module",
-    "scripts": {
-        "start": "node express.js"
-    }
+  "type": "module",
+  "scripts": {
+    "start": "node express.js"
+  },
+  "name": "crypto-currency-data-visualization",
+  "description": "Crypto Currency Data Visualization app made with Node.js and Vue.js",
+  "version": "1.0.0",
+  "main": "express.js",
+  "dependencies": {
+    "bpg-nino-mtavruli-bold": "^1.0.0",
+    "open": "^8.2.1",
+    "swig": "^0.14.0",
+    "underscore": "^1.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nNabakhteveli/crypto-data-visualization.git"
+  },
+  "author": "Nika Nabakhteveli (N.N)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nNabakhteveli/crypto-data-visualization/issues"
+  },
+  "homepage": "https://github.com/nNabakhteveli/crypto-data-visualization#readme"
 }

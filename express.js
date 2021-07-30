@@ -3,6 +3,7 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 import fetch from 'node-fetch';
 import fs from 'fs';
+import openHttpLink from 'open';
 
 
 async function callTheAPI(coinSymbol, path) {
@@ -49,4 +50,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port, hostname, () => console.log(`Your server is running at http://${hostname}:${port}/`));
+app.listen(port, hostname, () => {
+    console.log(`Your server is running at http://${hostname}:${port}/`);
+    openHttpLink(`http://${hostname}:${port}/`);
+});
