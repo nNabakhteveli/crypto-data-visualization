@@ -32,10 +32,10 @@ const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
     // To always update the data
-    fs.readFile('./data/coins.json', (err, data) => {
+    fs.readFile('/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
         coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
@@ -43,4 +43,4 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port, hostname, () => console.log(console.log(`Your server is running at http://${hostname}:${port}/`)));
+app.listen(port, hostname, () => console.log(`Your server is running at http://${hostname}:${port}/`));
