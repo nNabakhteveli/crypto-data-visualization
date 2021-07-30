@@ -39,14 +39,14 @@ function writeData() {
         const coinsArr = JSON.parse(data).data;
         setInterval(() => {
             coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
-        }, 5000);     
+        }, 10000); // To update the data in every 10 seconds
     });
 }
 writeData();
 
 app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
-    writeData(); // To always update the data whenever index page will be loaded
+    writeData(); 
     res.sendFile(__dirname + '/index.html');
 });
 
