@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.07rem;
+}
+
 .positive {
-    color: green;
+    color: #11b811;
 }
 
 .negative {
     color: red;
+}
+
+#name {
+    font-weight: bold;
+}
+
+.symbol {
+    color: #cfd6e4;
+    font-weight: bold;
 }

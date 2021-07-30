@@ -14,14 +14,14 @@ async function callTheAPI(coinSymbol, path) {
 
     let dataToPass = JSON.stringify({
         name: data.name,
+        symbol: data.symbol,
         price: `$${(data.price).toLocaleString()}`,
         percent_24h: `${data.percent_change_24h}`,
         percent_7d: `${data.percent_change_7d}`,
         marketCap: `$${data.market_cap.toLocaleString()}`,
         volume24h: `$${data.volume_24h.toLocaleString()}`,
-        circulSupply: `${data.max_supply} ${coinSymbol}`
+        circulSupply: parseInt(data.max_supply).toLocaleString()
     });
-
     fs.writeFile(path, dataToPass, (err) => { if (err) throw err });
     console.log(`${coinSymbol}'s Data has been written`);
 }
@@ -32,14 +32,20 @@ const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.use(express.static(__dirname + '/public'));
-app.get('/', (req, res) => {
-    // To always update the data
-    fs.readFile('/data/coins.json', (err, data) => {
+function writeData() {
+    fs.readFile('./public/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
-        coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
+        setInterval(() => {
+            coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
+        }, 5000);     
     });
+}
+writeData();
+
+app.use(express.static(__dirname + '/public'));
+app.get('/', (req, res) => {
+    writeData(); // To always update the data whenever index page will be loaded
     res.sendFile(__dirname + '/index.html');
 });
 

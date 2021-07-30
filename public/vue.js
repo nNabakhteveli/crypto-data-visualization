@@ -82,6 +82,7 @@ const app = Vue.createApp({
 
     
     mounted() {
+        this.$forceUpdate();
         this.$nextTick(function() {
             this.setBTC();
             this.setETH();
