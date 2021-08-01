@@ -7,31 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Crypto Data Visualization</title>
     <script src="https://unpkg.com/vue@next"></script>
+    <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
   </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Explore<span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.blockchain.com/explorer">Explore</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Communities</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+            <a class="nav-link" href="https://www.reddit.com/r/CryptoCurrency/">Join Community</a>
           </li>
         </ul>
       </div>
@@ -39,31 +28,32 @@
 
       <div id="container">
         <table class="table table-hover">
-            <thead>
+          <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">24h %</th>
-                <th scope="col">7d %</th>
-                <th scope="col">Market Cap</th>
-                <th scope="col">Volume(24h)</th>
-                <th scope="col">Max Circulating Supply</th>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">24h %</th>
+              <th scope="col">7d %</th>
+              <th scope="col">Market Cap</th>
+              <th scope="col">Volume(24h)</th>
+              <th scope="col">Max Circulating Supply</th>
             </tr>
-            </thead>
-            <tbody>
-              <tr v-for='(coin, index) in coins'>
-                <th id="id" >{{index + 1}}</th>
-                <td id="name"><a :href="coin.url" target="_blank"><img :src="coin.image" class="img"> {{coin.name}} <span class="symbol">{{coin.symbol}}</span></a></td>
-                <td id="price">{{coin.price}}</td>
-                <td id="24h-percent" v-bind:class="coin.percent_24h > 0 ? 'positive' : 'negative'">{{coin.percent_24h}}%</td>
-                <td id="7d-percent" v-bind:class="coin.percent_7d > 0 ? 'positive' : 'negative'">{{coin.percent_7d}}%</td>
-                <td id="market-cap">{{coin.marketCap}}</td>
-                <td id="volume-24h">{{coin.volume24h}}</td>
-                <td id="circulating-supply">{{coin.circulSupply}} {{coin.symbol}}</td>
-              </tr>
-            </tbody>
-        </table>
+          </thead>
+
+          <tbody>
+            <tr v-for='(coin, index) in coins'>
+              <th id="id" >{{index + 1}}</th>
+              <td id="name"><a :href="coin.url" target="_blank"><img :src="coin.image" class="img"> {{coin.name}} <span class="symbol">{{coin.symbol}}</span></a></td>
+              <td id="price">{{coin.price}}</td>
+              <td id="24h-percent" v-bind:class="coin.percent_24h > 0 ? 'positive' : 'negative'">{{coin.percent_24h}}%</td>
+              <td id="7d-percent" v-bind:class="coin.percent_7d > 0 ? 'positive' : 'negative'">{{coin.percent_7d}}%</td>
+              <td id="market-cap">{{coin.marketCap}}</td>
+              <td id="volume-24h">{{coin.volume24h}}</td>
+              <td id="circulating-supply">{{coin.circulSupply}} {{coin.symbol}}</td>
+            </tr>
+          </tbody>
+      </table>
     </div>
     <p class="credit"> <> With ❤️ By Nika Nabakhteveli</p>
     <script src='./vue.js' type='module'></script>
