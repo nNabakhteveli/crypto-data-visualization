@@ -31,7 +31,7 @@ async function callTheAPI(coinSymbol, path, img) {
 }
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,7 +42,6 @@ function writeData() {
     fs.readFile('./public/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
-        console.log(coinsArr);
         setInterval(() => {
             coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path, coin.image));
         }, 10000); // To update the data in every 10 seconds
