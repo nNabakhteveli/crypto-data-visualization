@@ -1,16 +1,18 @@
 {
   "type": "module",
   "scripts": {
+    "main": "express.js",
     "start": "node express.js"
+  },
+  "engines": {
+    "node": "14.16.1"
   },
   "name": "crypto-currency-data-visualization",
   "description": "Crypto Currency Data Visualization app made with Node.js and Vue.js",
   "version": "1.0.0",
-  "main": "express.js",
   "dependencies": {
     "bpg-nino-mtavruli-bold": "^1.0.0",
     "open": "^8.2.1",
-    "swig": "^0.14.0",
     "underscore": "^1.13.1"
   },
   "repository": {
