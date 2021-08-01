@@ -1,7 +1,7 @@
 {
   "type": "module",
+  "main": "express.js",
   "scripts": {
-    "main": "express.js",
     "start": "node express.js"
   },
   "engines": {
