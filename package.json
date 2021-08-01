@@ -12,6 +12,7 @@
   "version": "1.0.0",
   "dependencies": {
     "bpg-nino-mtavruli-bold": "^1.0.0",
+    "express": "^4.17.1",
     "open": "^8.2.1",
     "underscore": "^1.13.1"
   },
