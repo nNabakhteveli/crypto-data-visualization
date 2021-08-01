@@ -26,7 +26,7 @@
             <tbody>
               <tr v-for='(coin, index) in coins'>
                 <th id="id" >{{index + 1}}</th>
-                <td id="name"><img :src="coin.image" class="img"> {{coin.name}} <span class="symbol">{{coin.symbol}}</span></td>
+                <td id="name"><a :href="coin.url" target="_blank"><img :src="coin.image" class="img"> {{coin.name}} <span class="symbol">{{coin.symbol}}</span></a></td>
                 <td id="price">{{coin.price}}</td>
                 <td id="24h-percent" v-bind:class="coin.percent_24h > 0 ? 'positive' : 'negative'">{{coin.percent_24h}}%</td>
                 <td id="7d-percent" v-bind:class="coin.percent_7d > 0 ? 'positive' : 'negative'">{{coin.percent_7d}}%</td>
@@ -37,6 +37,7 @@
             </tbody>
         </table>
     </div>
+    <p class="credit"> <> With ❤️ By Nika Nabakhteveli</p>
     <script src='./vue.js' type='module'></script>
   </body>
 </html>

@@ -22,7 +22,9 @@ async function callTheAPI(coinSymbol, path, img) {
         percent_7d: `${data.percent_change_7d}`,
         marketCap: `$${data.market_cap.toLocaleString()}`,
         volume24h: `$${data.volume_24h.toLocaleString()}`,
-        circulSupply: parseInt(data.max_supply).toLocaleString()
+        circulSupply: parseInt(data.max_supply).toLocaleString(),
+        url: `https://www.binance.com/en/trade/${coinSymbol}_USDT?theme=dark&type=spot`
+
     });
     fs.writeFile(path, dataToPass, (err) => { if (err) throw err });
     console.log(`${coinSymbol}'s Data has been written`);
