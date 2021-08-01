@@ -6,7 +6,7 @@ import fs from 'fs';
 import openHttpLink from 'open';
 
 
-async function callTheAPI(coinSymbol, path) {
+async function callTheAPI(coinSymbol, path, img) {
     const APIKEY = 'amq5jptnsna65hkogat66b';
     let URL = `https://api.lunarcrush.com/v2?data=assets&key=${APIKEY}&symbol=${coinSymbol}&data_points=365&interval=day`;
     const fetching = await fetch(URL);
@@ -16,6 +16,7 @@ async function callTheAPI(coinSymbol, path) {
     let dataToPass = JSON.stringify({
         name: data.name,
         symbol: data.symbol,
+        image: img,
         price: `$${(data.price).toLocaleString()}`,
         percent_24h: `${data.percent_change_24h}`,
         percent_7d: `${data.percent_change_7d}`,
@@ -33,18 +34,20 @@ const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+
+app.use(express.static(__dirname + '/public'));
 function writeData() {
     fs.readFile('./public/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
+        console.log(coinsArr);
         setInterval(() => {
-            coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path));
+            coinsArr.forEach(coin => callTheAPI(coin.symbol, coin.path, coin.image));
         }, 10000); // To update the data in every 10 seconds
     });
 }
 writeData();
 
-app.use(express.static(__dirname + '/public'));
 app.get('/', (req, res) => {
     writeData(); 
     res.sendFile(__dirname + '/index.html');

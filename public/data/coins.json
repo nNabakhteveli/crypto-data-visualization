@@ -2,47 +2,56 @@
     "data": [
         {
             "symbol": "BTC",
-            "path": "./public/data/Bitcoin.json"
+            "path": "./public/data/Bitcoin.json",
+            "image": "/images/bitcoin.png"
         },
 
         {
             "symbol": "ETH",
-            "path": "./public/data/Ethereum.json"
+            "path": "./public/data/Ethereum.json",
+            "image": "./images/ethereum.png"
         },
 
         {
             "symbol": "ADA",
-            "path": "./public/data/Cardano.json"
+            "path": "./public/data/Cardano.json",
+            "image": "/images/cardano.png"
         },
 
         {
             "symbol": "XRP",
-            "path": "./public/data/Ripple.json"
+            "path": "./public/data/Ripple.json",
+            "image": "/images/ripple.png"
         },
 
         {
             "symbol": "BNB",
-            "path": "./public/data/BNB.json"
+            "path": "./public/data/BNB.json",
+            "image": "/images/bnb.png"
         },
 
         {
             "symbol": "LINK",
-            "path": "./public/data/Chainlink.json"
+            "path": "./public/data/Chainlink.json",
+            "image": "/images/chainlink.png"
         },
 
         {
             "symbol": "DOT",
-            "path": "./public/data/Polkadot.json"
+            "path": "./public/data/Polkadot.json",
+            "image": "/images/polkadot.png"
         },
 
         {
             "symbol": "DOGE",
-            "path": "./public/data/Doge.json"
+            "path": "./public/data/Doge.json",
+            "image": "/images/doge.png"
         },
 
         {
             "symbol": "LTC",
-            "path": "./public/data/Litecoin.json"
+            "path": "./public/data/Litecoin.json",
+            "image": "/images/litecoin.png"
         }
     ]
 }
