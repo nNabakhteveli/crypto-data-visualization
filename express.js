@@ -31,7 +31,7 @@ async function callTheAPI(coinSymbol, path, img) {
 }
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,7 +39,7 @@ const __dirname = dirname(__filename);
 
 app.use(express.static(__dirname + '/public'));
 function writeData() {
-    fs.readFile('./public/data/coins.json', (err, data) => {
+    fs.readFile('/public/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
         setInterval(() => {
