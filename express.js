@@ -39,7 +39,7 @@ const __dirname = dirname(__filename);
 
 app.use(express.static(__dirname + '/public'));
 function writeData() {
-    fs.readFile(`${hostname}:${port}/public/data/coins.json`, (err, data) => {
+    fs.readFile('./public/data/coins.json', (err, data) => {
         if (err) throw err;
         const coinsArr = JSON.parse(data).data;
         setInterval(() => {
