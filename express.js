@@ -31,7 +31,7 @@ async function callTheAPI(coinSymbol, path, img) {
 }
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.port || 3000;
 const hostname = "127.0.0.1";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -54,7 +54,8 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 });
 
-app.listen(port, hostname, () => {
-    console.log(`Your server is running at http://${hostname}:${port}/`);
-    openHttpLink(`http://${hostname}:${port}/`);
+app.listen(port, () => {
+    // console.log(`Your server is running at http://${hostname}:${port}/`);
+    console.log("Node is up and running");
+    // openHttpLink(`http://${hostname}:${port}/`);
 });
