@@ -16,13 +16,6 @@ const app = Vue.createApp({
     },
 
     methods: {
-        // async setValuesFromJSON(path, coin) {
-        //     const fetching = await fetch(path);
-        //     const response = await fetching.json();
-        //     coin = response;
-        //     this.coins.push(coin);
-        // }
-
         setValuesFromJSON(path, coin) {
             fetch(path)
             .then(response => response.json())
