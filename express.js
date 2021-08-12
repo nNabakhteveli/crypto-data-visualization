@@ -55,7 +55,8 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    // console.log(`Your server is running at http://${hostname}:${port}/`);
-    console.log("Node is up and running");
-    // openHttpLink(`http://${hostname}:${port}/`);
+    console.log("Node is up");
+    console.log(`Your server is running at http://${hostname}:${port}/`);
+    console.log("Opening the project...")
+    openHttpLink(`http://${hostname}:${port}/`);
 });

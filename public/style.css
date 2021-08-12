@@ -2,48 +2,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
 * {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 1.07rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.07rem;
 }
 
 .positive {
-    color: #11b811;
+  color: #11b811;
 }
 
 .negative {
-    color: red;
+  color: red;
 }
 
 #name {
-    font-weight: bold;
-    text-decoration: none;
-
-
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .symbol {
-    color: #cfd6e4;
-    font-weight: bold;
+  color: #cfd6e4;
+  font-weight: bold;
 }
 
 #container {
-    margin: 30px auto;
-    border: 1px solid #eef1f2;
-    width: 80%;
+  margin: 30px auto;
+  border: 1px solid #eef1f2;
+  width: 80%;
 }
 
 .img {
-    width: 25px;
-    margin: 0 auto;
+  width: 25px;
+  margin: 0 auto;
 }
 
 .credit {
-    font-family: 'Lato', sans-serif;
-    font-size: .9rem;
-    margin-left: 15px;   
+  font-family: 'Lato', sans-serif;
+  font-size: .9rem;
+  margin-left: 15px;
 }
 
 #coins-nav {
-    font-size: 40px;
-    color: #f2a900;
+  font-size: 40px;
+  color: #f2a900;
 }
